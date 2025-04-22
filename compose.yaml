@@ -1,0 +1,34 @@
+
+services:
+  ollama:
+    image: ollama/ollama:latest  
+    container_name: ollama   
+    volumes:
+      - ollamavolume:/root/.ollama
+    ports:
+      - "11434:11434"  # Ollama default port           
+    networks:
+      - net
+
+  rag_app:
+    build: .
+    container_name: rag_app
+    environment:
+      - DOCS_DIR=${DOCKER_DOCS_DIR}
+      - DOCS_METADATA_FILE_NAME=${DOCS_METADATA_FILE_NAME}
+      - VECTOR_STORE_DIR=${DOCKER_VECTOR_STORE_DIR}
+    volumes:
+      - ${HOST_DOCS_DIR}:${DOCKER_DOCS_DIR}
+      - ${HOST_VECTOR_STORE_DIR}:${DOCKER_VECTOR_STORE_DIR}
+    ports:
+      - "8501:8501"  # Streamlit default port
+    networks:
+      - net
+    depends_on:
+      - ollama
+
+networks:
+  net: {}
+
+volumes:
+  ollamavolume:

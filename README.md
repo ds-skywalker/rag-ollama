@@ -40,7 +40,9 @@ AI Assistant is a Retrieval-Augmented Generation (RAG) application that enables 
   Where the "file name" - name of the pdf file with some information and "link" - link to the webpage with
   this information. If you have not such links, you can put some dummy links.
   For example:
-  "file name", "link" 
+
+  "file name", "link"
+  
   llm.pdf,     https://aws.amazon.com/what-is/large-language-model/  
   rag.pdf,     https://aws.amazon.com/what-is/retrieval-augmented-generation/
 
