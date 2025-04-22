@@ -42,7 +42,7 @@ AI Assistant is a Retrieval-Augmented Generation (RAG) application that enables 
   For example:
 
   "file name", "link"
-  
+
   llm.pdf,     https://aws.amazon.com/what-is/large-language-model/  
   rag.pdf,     https://aws.amazon.com/what-is/retrieval-augmented-generation/
 
@@ -50,8 +50,8 @@ AI Assistant is a Retrieval-Augmented Generation (RAG) application that enables 
 
 1. **Clone the repository:**
     ```bash
-    git clone <your-repo-url>
-    cd rag_ollama
+    git clone git@github.com:ds-skywalker/rag-ollama.git
+    cd rag-ollama
     ```
 
 2. **Configure environment variables:**
