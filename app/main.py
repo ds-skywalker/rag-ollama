@@ -83,9 +83,7 @@ check_vector_store()
 if st.button("Create Documents Store"):
     try:
         st.spinner("Creating vector store...")
-        logger.info("1.1")
-        rag.create_vector_store()
-        logger.info("1.2")        
+        rag.create_vector_store()      
         rag.init_rag_chain()
         st.success("Documents Store created successfully!")
     except Exception as e:
